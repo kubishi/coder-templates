@@ -183,7 +183,7 @@ resource "coder_agent" "main" {
     echo "Installing filebrowser"
     curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
     echo "Starting filebrowser"
-    filebrowser --noauth --root /home/${local.username}/data >./filebrowser.log --baseurl /@${local.username}/${data.coder_workspace.me.name}/filebrowser 2>&1 &
+    filebrowser --noauth --root /home/${local.username}/data >./filebrowser.log --baseurl /@${local.username}/${data.coder_workspace.me.name}.main/apps/filebrowser 2>&1 &
   
     # Start jupyter
     if [ ${data.coder_parameter.jupyter.value} == true ];
